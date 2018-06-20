@@ -10,7 +10,6 @@ object JoinCase {
     val bFilePath = "file:///code/github/spark_example/data/a.txt" // Should be some file on your system
     val conf = new SparkConf().setAppName("Join Application").setMaster("local");
     //
-    val conf = new SparkConf().setAppName("Join Application").setMaster("local");
     val sc = new SparkContext(conf)
 //    val cDataRdd = aDataRdd.map(row=>row.split(";")).map(row=>{(row._1,(row._1,row._2))}).leftOuterJoin(bDataRdd)
 //    println(cDataRdd.foreach(println))
