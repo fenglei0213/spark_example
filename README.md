@@ -1,3 +1,3 @@
 # spark_example
 spark example
-scala
+scala example
