@@ -1,7 +1,7 @@
 package org.sample
 
 import org.apache.spark.{SparkConf, SparkContext}
-import org.utils.FileUtils
+import org.utils.OfflineUtil
 
 object GroupBySortCaseV2 {
 
@@ -20,7 +20,7 @@ object GroupBySortCaseV2 {
     ).groupBy(item => (item._1)).map(line=>{
             (line._1,line._2.toList.sortBy(_._2)(Ordering.Int.reverse).take(1))
     })
-    FileUtils.dropDirectory(outFilePath);
+    OfflineUtil.dropDirectory(outFilePath);
     rsDataRdd.saveAsTextFile(outFilePath);
   }
 }

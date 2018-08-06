@@ -1,7 +1,7 @@
 package org.sample
 
 import org.apache.spark.{SparkConf, SparkContext}
-import org.utils.FileUtils
+import org.utils.OfflineUtil
 
 object GroupBySortCase {
 
@@ -30,7 +30,7 @@ object GroupBySortCase {
     // (item._2.toList.sortBy(item => (item._1)).take(1))
     //})
     // 不写点语法也对
-    FileUtils.dropDirectory(outFilePath);
+    OfflineUtil.dropDirectory(outFilePath);
     rsDataRdd.saveAsTextFile(outFilePath);
   }
 }
